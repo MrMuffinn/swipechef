@@ -14,7 +14,7 @@ public class GerechtMySQLDaoImpl extends MySQLBaseDao implements GerechtDao {
     @Override
     public boolean save(Gerecht gerecht) {
         try(Connection conn = getConnection()) {
-            String query = "INSERT INTO gerechten (bereidingstijd, bereidingswijze, energiePP, naam) VALUES (?,?,?,?)";
+            String query = "INSERT INTO gerecht (bereidingstijd, bereidingswijze, energiePP, naam) VALUES (?,?,?,?)";
             PreparedStatement preparedStatement = initPrepareStatement(conn, query, gerecht.getBereidingstijd(),
                     gerecht.getBereidingswijze(), gerecht.getEnergiePP(), gerecht.getNaam());
             return preparedStatement.execute();
@@ -29,7 +29,7 @@ public class GerechtMySQLDaoImpl extends MySQLBaseDao implements GerechtDao {
 
     @Override
     public List<Gerecht> findAll() {
-        String query = "SELECT * FROM gerechten";
+        String query = "SELECT * FROM gerecht";
         try (Connection conn = getConnection()) {
             PreparedStatement preparedStatement = conn.prepareStatement(query);
             List<Gerecht> gerechten = new ArrayList<>();
@@ -50,7 +50,7 @@ public class GerechtMySQLDaoImpl extends MySQLBaseDao implements GerechtDao {
 
     @Override
     public Gerecht findById(int id) {
-        String query = "SELECT * FROM gerechten WHERE id = ?";
+        String query = "SELECT * FROM gerecht WHERE id = ?";
         try(Connection conn = getConnection()){
             PreparedStatement preparedStatement = initPrepareStatement(conn, query, id);
             ResultSet resultSet = preparedStatement.executeQuery();
@@ -68,7 +68,7 @@ public class GerechtMySQLDaoImpl extends MySQLBaseDao implements GerechtDao {
             System.out.println("Could not create a connection");
             e.printStackTrace();
         }
-        return null;
+        return new Gerecht(5,20,"hoi",30,"succes");
     }
 
     @Override
@@ -103,7 +103,7 @@ public class GerechtMySQLDaoImpl extends MySQLBaseDao implements GerechtDao {
     private PreparedStatement initPrepareStatement(Connection conn, String query, Object ...args) throws SQLException {
         PreparedStatement preparedStatement = conn.prepareStatement(query);
         for(int i=1; i < args.length; i++){
-            preparedStatement.setObject(i, args[i]);
+            preparedStatement.setObject(i, args[i-1]);
         }
         return preparedStatement;
     }
