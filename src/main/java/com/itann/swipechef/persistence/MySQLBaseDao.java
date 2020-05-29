@@ -12,7 +12,7 @@ public class MySQLBaseDao implements BaseDao {
     public Connection getConnection() {
         try {
             // Verbinding maken met de DB
-            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/swipechef", "user", "pass");
+            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/swipechef", "user", "pass");  // k+T`z/W7Y\*)Z$J)
         }
         // Als het verbinden fout gaat
         catch (SQLException e) {
@@ -33,3 +33,4 @@ public class MySQLBaseDao implements BaseDao {
         }
     }
 }
+

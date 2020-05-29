@@ -23,7 +23,6 @@ public class GerechtMySQLDaoImpl extends MySQLBaseDao implements GerechtDao {
             System.out.println("Could not create a connection");
             e.printStackTrace();
         }
-
         return false;
     }
 
@@ -73,7 +72,7 @@ public class GerechtMySQLDaoImpl extends MySQLBaseDao implements GerechtDao {
 
     @Override
     public boolean update(Gerecht gerecht) {
-        String query = "UPDATE gerecht SET bereidingstijd = ?, bereidingswijze = ?, energiePP = ?, naam = ?";
+        String query = "UPDATE gerechten SET bereidingstijd = ?, bereidingswijze = ?, energiePP = ?, naam = ?";
         try (Connection conn = getConnection()){
             PreparedStatement preparedStatement = initPrepareStatement(conn, query, gerecht.getBereidingstijd(),
                     gerecht.getBereidingswijze(), gerecht.getEnergiePP(), gerecht.getNaam());
@@ -88,7 +87,7 @@ public class GerechtMySQLDaoImpl extends MySQLBaseDao implements GerechtDao {
 
     @Override
     public boolean delete(Gerecht gerecht) {
-        String query = "DELETE FROM ? WHERE id = ?";
+        String query = "DELETE FROM gerechten WHERE id = ?";
         try (Connection conn = getConnection()) {
             PreparedStatement preparedStatement = initPrepareStatement(conn, query, gerecht.getId());
             return preparedStatement.execute();
