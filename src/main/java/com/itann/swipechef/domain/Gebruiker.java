@@ -16,14 +16,14 @@ public class Gebruiker {
     private String wachtwoord;
     private String rol;
 
-    public Gebruiker(int id, String voornaam, String achternaam, String email, String wachtwoord, String rol) {
-        this.id = id;
-        this.voornaam = voornaam;
-        this.achternaam = achternaam;
-        this.email = email;
-        this.wachtwoord = wachtwoord;
-        this.rol = rol;
-    }
+//    public Gebruiker(int id, String voornaam, String achternaam, String email, String wachtwoord, String rol) {
+//        this.id = id;
+//        this.voornaam = voornaam;
+//        this.achternaam = achternaam;
+//        this.email = email;
+//        this.wachtwoord = wachtwoord;
+//        this.rol = rol;
+//    }
 
     public enum Rol {
         ADMINISTRATOR,

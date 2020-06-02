@@ -2,9 +2,13 @@ package com.itann.swipechef.services;
 
 import com.itann.swipechef.domain.Gerecht;
 import com.itann.swipechef.persistence.GerechtDao;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+//@Service("gerechtService")
 public class GerechtService {
 
     private GerechtDao dao;

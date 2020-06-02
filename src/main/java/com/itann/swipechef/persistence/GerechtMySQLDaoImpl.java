@@ -14,7 +14,7 @@ public class GerechtMySQLDaoImpl extends MySQLBaseDao implements GerechtDao {
     @Override
     public boolean save(Gerecht gerecht) {
         try(Connection conn = getConnection()) {
-            String query = "INSERT INTO gerechten (bereidingstijd, bereidingswijze, energiePP, naam) VALUES (?,?,?,?)";
+            String query = "INSERT INTO gerecht (bereidingstijd, bereidingswijze, energiePP, naam) VALUES (?,?,?,?)";
             PreparedStatement preparedStatement = initPrepareStatement(conn, query, gerecht.getBereidingstijd(),
                     gerecht.getBereidingswijze(), gerecht.getEnergiePP(), gerecht.getNaam());
             return preparedStatement.execute();
@@ -29,7 +29,7 @@ public class GerechtMySQLDaoImpl extends MySQLBaseDao implements GerechtDao {
 
     @Override
     public List<Gerecht> findAll() {
-        String query = "SELECT * FROM gerechten";
+        String query = "SELECT * FROM gerecht";
         try (Connection conn = getConnection()) {
             PreparedStatement preparedStatement = conn.prepareStatement(query);
             List<Gerecht> gerechten = new ArrayList<>();
@@ -50,7 +50,7 @@ public class GerechtMySQLDaoImpl extends MySQLBaseDao implements GerechtDao {
 
     @Override
     public Gerecht findById(int id) {
-        String query = "SELECT * FROM gerechten WHERE id = ?";
+        String query = "SELECT * FROM gerecht WHERE id = ?";
         try(Connection conn = getConnection()){
             PreparedStatement preparedStatement = initPrepareStatement(conn, query, id);
             ResultSet resultSet = preparedStatement.executeQuery();
