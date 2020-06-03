@@ -16,5 +16,5 @@ public interface GebruikerRepository extends CrudRepository<Gebruiker, Integer> 
 //    String toevoegenGebruiker(@Param("voornaam") String voornaam, @Param("achternaam") String achternaam, @Param("email") String email, @Param("wachtwoord") String wachtwoord);
 
 
-//    public Gebruiker findById(int id);
+//    Gebruiker findById(int id);
 }

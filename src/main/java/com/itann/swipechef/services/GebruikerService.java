@@ -6,6 +6,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 
 @Service
 @RequiredArgsConstructor
@@ -18,7 +20,18 @@ public class GebruikerService {
         return gebruikersRepository.findByEmail(email);
     }
 
+    public Optional<Gebruiker> getGebruikerOpId(int id) {
+        return gebruikersRepository.findById(id);
+    }
 
+    public Gebruiker postNieuweGebruiker(String voornaam, String achternaam, String email, String wachtwoord) {
+        Gebruiker gebruiker = new Gebruiker();
+        gebruiker.setVoornaam(voornaam);
+        gebruiker.setAchternaam(achternaam);
+        gebruiker.setEmail(email);
+        gebruiker.setWachtwoord(wachtwoord);
+        return gebruikersRepository.save(gebruiker);
+    }
 
 
 
