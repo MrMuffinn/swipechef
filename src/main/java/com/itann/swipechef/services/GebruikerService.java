@@ -24,12 +24,13 @@ public class GebruikerService {
         return gebruikersRepository.findById(id);
     }
 
-    public Gebruiker postNieuweGebruiker(String voornaam, String achternaam, String email, String wachtwoord) {
+    public Gebruiker postNieuweGebruiker(String voornaam, String achternaam, String email, String wachtwoord, String rol) {
         Gebruiker gebruiker = new Gebruiker();
         gebruiker.setVoornaam(voornaam);
         gebruiker.setAchternaam(achternaam);
         gebruiker.setEmail(email);
         gebruiker.setWachtwoord(wachtwoord);
+        gebruiker.setRol(rol);
         return gebruikersRepository.save(gebruiker);
     }
 

@@ -36,9 +36,10 @@ public class GebruikerController {
     public ResponseEntity<Gebruiker> addNewUser(@RequestParam String voornaam,
                                      @RequestParam String achternaam,
                                      @RequestParam String email,
-                                     @RequestParam String wachtwoord) {
+                                     @RequestParam String wachtwoord,
+                                                @RequestParam String rol) {
 
-        return ResponseEntity.ok(gebruikerService.postNieuweGebruiker(voornaam, achternaam, email, wachtwoord));
+        return ResponseEntity.ok(gebruikerService.postNieuweGebruiker(voornaam, achternaam, email, wachtwoord, rol));
     }
 
 }
