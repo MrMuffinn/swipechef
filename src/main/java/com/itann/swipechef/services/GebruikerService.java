@@ -34,6 +34,12 @@ public class GebruikerService {
         return gebruikersRepository.save(gebruiker);
     }
 
+//    public Gebruiker inloggenGebruiker(String email, String wachtwoord) {
+//        Gebruiker gebruiker = new Gebruiker();
+//        gebruiker.setVoornaam(email);
+//        gebruiker.setAchternaam(wachtwoord);
+//        return gebruikersRepository.(email, wachtwoord);
+//    }
 
 
  /*   private GebruikerDao dao;

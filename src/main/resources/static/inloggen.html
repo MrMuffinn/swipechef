@@ -28,11 +28,13 @@
             <label>Inloggen</label>
 
             <div class="container">
+                <form action="http://localhost:8080/inloggen" method="post">
                 <input type="text" placeholder="E-mailadres" name="emailadres" required>
 
                 <input type="password" placeholder="Wachtwoord" name="wachtwoord" required>
 
                 <button type="submit">log in</button>
+                </form>
                 <form action="http://localhost:8080/swipechef/registreren" method="get">
                 <input type="account" maak account aan>
                 </form>

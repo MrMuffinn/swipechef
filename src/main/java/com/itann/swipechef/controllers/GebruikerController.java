@@ -4,11 +4,13 @@ import com.itann.swipechef.domain.Gebruiker;
 import com.itann.swipechef.services.GebruikerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Optional;
 
-@RestController
+@Controller
 //@RequestMapping(path = "/gebruiker")
 public class GebruikerController {
 
@@ -16,7 +18,7 @@ public class GebruikerController {
     private GebruikerService gebruikerService;
 
     @GetMapping("/gebruiker")
-    public Optional<Gebruiker> getGebruiker(@RequestParam(required = false) int id) {
+    public @ResponseBody Optional<Gebruiker> getGebruiker(@RequestParam(required = false) int id) {
 
         return gebruikerService.getGebruikerOpId(id);
     }
@@ -33,14 +35,25 @@ public class GebruikerController {
     }
 
     @PostMapping("/registreren")
-    public ResponseEntity<Gebruiker> addNewUser(@RequestParam String voornaam,
-                                     @RequestParam String achternaam,
-                                     @RequestParam String email,
-                                     @RequestParam String wachtwoord,
-                                                @RequestParam String rol) {
+    public String addNewUser(@RequestParam(name = "voornaam") String voornaam,
+                             @RequestParam(name = "achternaam") String achternaam,
+                             @RequestParam(name = "email") String email,
+                             @RequestParam(name = "wachtwoord") String wachtwoord,
+                             @RequestParam(name = "rol") String rol, Model model) {
 
-        return ResponseEntity.ok(gebruikerService.postNieuweGebruiker(voornaam, achternaam, email, wachtwoord, rol));
+        gebruikerService.postNieuweGebruiker(voornaam, achternaam, email, wachtwoord, rol);
+
+        return "gebruikerAdded";
     }
+
+//    @PostMapping("/inloggen")
+//    public String getUserByEmail(@RequestParam(name = "email") String email,
+//                             @RequestParam(name = "wachtwoord") String wachtwoord, Model model) {
+//
+//        gebruikerService.inloggenGebruiker(email, wachtwoord);
+//
+//        return "gebruikerAdded";
+//    }
 
 }
 
