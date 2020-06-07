@@ -2,38 +2,47 @@ package com.itann.swipechef.services;
 
 import com.itann.swipechef.domain.Gerecht;
 import com.itann.swipechef.domain.Ingredient;
-import com.itann.swipechef.persistence.IngredientDao;
+import com.itann.swipechef.persistence.IngredientRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+import java.sql.ResultSet;
+import java.util.ArrayList;
 import java.util.List;
 
-
+@Service
 public class IngredientService {
 
-    private IngredientDao dao;
+    @Autowired
+    IngredientRepository ingredientRepository;
 
-    public IngredientService(IngredientDao dao) {
-        this.dao = dao;
+//    public List<Ingredient> findIngredientenByGerechtId(int gerecht) {
+//        var it = ingredientRepository.findIngredientByGerechtId(gerecht);
+//
+//        var ingredienten = new ArrayList<Ingredient>();
+//        it.forEach(e -> ingredienten.add(e));
+//
+//        return ingredienten;
+//    }
+
+    public List<Ingredient> findAll() {
+
+        var it = ingredientRepository.findAll();
+
+        var ingredienten = new ArrayList<Ingredient>();
+        it.forEach(e -> ingredienten.add(e));
+
+        return ingredienten;
     }
 
-    public Ingredient getById(int id) {
-        return dao.findById(id);
+    public int count() {
+
+        return (int) ingredientRepository.count();
     }
 
-    public List<Ingredient> getAll() {
-        return dao.findAll();
+    public void deleteById(int ingredientId) {
+
+        ingredientRepository.deleteById(ingredientId);
     }
 
-    public boolean save(Ingredient ingredient) {
-        return dao.save(ingredient);
-    }
-
-    public boolean update(Ingredient ingredient) {
-        return dao.update (ingredient);
-    }
-
-    public boolean delete(Ingredient ingredient) {
-        return dao.delete (ingredient);
-    }
-
-    public List<Ingredient> getByGerecht(Gerecht gerecht) {return dao.findByGerecht(gerecht);}
 }

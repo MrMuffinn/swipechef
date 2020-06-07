@@ -1,13 +1,20 @@
 package com.itann.swipechef.domain;
 
-public class Product {
-    private int id;
-    private String naam;
-    private Eenheid eenheid;
-    private int energiePE;
+import javax.persistence.*;
 
-    public Product(int id, String naam, String eenheid, int energiePE) {
-    }
+@Entity
+public class Product {
+
+    @Id
+    @GeneratedValue
+    @Column(name="id")
+    private int id;
+    @Column(name="naam", insertable = false, updatable = false)
+    private String naam;
+    @Column(name = "eenheid")
+    private String eenheid;
+    @Column(name = "energiePE")
+    private int energiePE;
 
 
     public int getId() {
@@ -26,19 +33,19 @@ public class Product {
         this.naam = naam;
     }
 
-    public Eenheid getEenheid() {
-        return eenheid;
-    }
-
-    public void setEenheid(Eenheid eenheid) {
-        this.eenheid = eenheid;
-    }
-
     public int getEnergiePE() {
         return energiePE;
     }
 
     public void setEnergiePE(int energiePE) {
         this.energiePE = energiePE;
+    }
+
+    public String getEenheid() {
+        return eenheid;
+    }
+
+    public void setEenheid(String eenheid) {
+        this.eenheid = eenheid;
     }
 }

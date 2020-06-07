@@ -1,24 +1,27 @@
 package com.itann.swipechef.services;
 
 import com.itann.swipechef.domain.Eenheid;
-import com.itann.swipechef.persistence.EenheidDao;
+import com.itann.swipechef.persistence.EenheidRepository;
+import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
-import java.util.List;
-
+@Service
+@RequiredArgsConstructor
 public class EenheidService {
 
-    private EenheidDao dao;
+    @Autowired
+    private EenheidRepository eenheidsRepository;
 
-    public EenheidService(EenheidDao dao){this.dao = dao;}
+    public Eenheid getEenheidOpNaam(String naam) {
+        return eenheidsRepository.findByNaam(naam);
+    }
 
-    public Eenheid getByName(String naam) {return dao.findByName(naam);}
+       public Eenheid postNieuweEenheid(String naam) {
+        Eenheid eenheid = new Eenheid();
+        eenheid.setNaam(naam);
 
-    public List<Eenheid> getAll(){ return dao.findAll();}
-
-    public boolean save(Eenheid eenheid){ return dao.save(eenheid); }
-
-    public boolean update(Eenheid eenheid){return dao.update(eenheid);}
-
-    public boolean delete(Eenheid eenheid){return dao.delete(eenheid);}
+        return eenheidsRepository.save(eenheid);
+    }
 
 }

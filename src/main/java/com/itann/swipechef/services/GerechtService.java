@@ -1,36 +1,54 @@
 package com.itann.swipechef.services;
 
+
 import com.itann.swipechef.domain.Gerecht;
-import com.itann.swipechef.persistence.GerechtDao;
+import com.itann.swipechef.domain.Ingredient;
+import com.itann.swipechef.persistence.GerechtRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
-public class GerechtService {
+@Service
+public class GerechtService{
 
-    private GerechtDao dao;
+    @Autowired
+    public GerechtRepository gerechtRepository;
 
-    public GerechtService(GerechtDao dao) {
-        this.dao = dao;
+    public Optional<Gerecht> getGerechtById(int id) {
+
+        return gerechtRepository.findById(id);
     }
 
-    public Gerecht getById(int id) {
-        return dao.findById(id);
-    }
+//    public List<Ingredient> getIngredientByGerechtId(int id){
+//
+//    }
 
-    public List<Gerecht> getAll() {
-        return dao.findAll();
-    }
+//    public List<Ingredient> getIngredientByGerechten(){
+//        return gerechtRepository.getIngredientenByGerecht();
+//    }
 
-    public boolean save(Gerecht gerecht) {
-        return dao.save(gerecht);
-    }
-
-    public boolean update(Gerecht gerecht) {
-        return dao.update (gerecht);
-    }
-
-    public boolean delete(Gerecht gerecht) {
-        return dao.delete (gerecht);
-    }
+//    public List<Ingredient> getIngredientenByGerechtId(int id) {
+//        List<Ingredient> ingredienten = new ArrayList<Ingredient>();
+//        try (Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/swipechef?serverTimezone=EST",
+//                "root", "Hanze@25")) {
+//            String query = "SELECT I.*  FROM gerecht G, ingredient I  where G.id = ?";
+//            PreparedStatement preparedStatement = conn.prepareStatement(query, id);
+//            ResultSet resultSet = preparedStatement.executeQuery();
+//            while(resultSet.next()){
+//                ingredienten.add(new Ingredient(resultSet.getInt("id"),
+//                        resultSet.getObject("gerecht"),
+//                        resultSet.getInt("hoeveelheidPP"),
+//                        resultSet.getObject("product")));
+//
+//            }
+//            return ingredienten;
+//        } catch (SQLException e) {
+//            System.out.println("could not create a connection");
+//            e.printStackTrace();
+//        }
+//        return null;
+//    }
 
 }
