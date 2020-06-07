@@ -9,5 +9,5 @@ import java.util.List;
 @Repository
 public interface IngredientRepository extends CrudRepository<Ingredient, Integer> {
 
-    List<Ingredient> findIngredientByGerechtId(int gerecht);
+//    List<Ingredient> findIngredientByGerechtId(int gerecht);
 }

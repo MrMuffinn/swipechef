@@ -17,9 +17,9 @@ public class IngredientService {
     IngredientRepository ingredientRepository;
 
 //    public List<Ingredient> findIngredientenByGerechtId(int gerecht) {
-//        var it = ingredientRepository.findIngredientByGerechtId(gerecht);
+//        List<Ingredient> it = ingredientRepository.findIngredientByGerechtId(gerecht);
 //
-//        var ingredienten = new ArrayList<Ingredient>();
+//        List<Ingredient> ingredienten = new ArrayList<Ingredient>();
 //        it.forEach(e -> ingredienten.add(e));
 //
 //        return ingredienten;

@@ -2,79 +2,68 @@
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>SwipeCHEF</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="css/nav.css">
-        <link rel="stylesheet" href="css/piroll.css">
-    
-    </head>
-    <body>
-        <!--[if lt IE 7]>
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>SwipeCHEF</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/piroll.css">
+</head>
+
+<body>
+    <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-        <div class="container">
-            <div class="head">
-                <header>
-                    <h1><span style="font-size: small;">swipe</span>Chef </h1> 
-                   
-                    <nav>
-                        <ul>
-                            <li><a href="#">HOME</a></li>
-                            <li><a href="#">RECEPTEN</a></li>
-                            <li><a href="#">MIJN KOOKBOEK</a></li>
-                            <li><a href="#">INLOGGEN</a></li>
-                        </ul>
-                    </nav>
-                </header>
-            </div>   
-
-            <section id="recepten" class="recept" style="text-align: center; width: 60%;">
-                
-                    <br> 
-                    <h2 id="gerecht-naam"></h2>
-                    <br>
-                    
-                    <div id="recept">   
-                    <div id="test">
+    <div class="container">
+        <div class="head">
+            <header>
+                <h1><span style="font-size: small;">swipe</span>Chef </h1>
+                <nav>
+                    <ul>
+                        <li><a href="#">HOME</a></li>
+                        <li><a href="#">RECEPTEN</a></li>
+                        <li><a href="#">MIJN KOOKBOEK</a></li>
+                        <li><a href="#">INLOGGEN</a></li>
+                    </ul>
+                </nav>
+            </header>
+        </div>
+        <section id="recepten" class="recept" style="text-align: center; width: 60%;">
+            <br>
+            <h2 id="gerecht-naam"></h2>
+            <br>
+            <div id="recept">
+                <div id="test">
                     <div id="legediv"><img src="recept.png" alt=""></div>
-                        <nav id="receptgegevens" >
-                            <p id="gerecht-bereidingswijze"></p>
-                            <p id="gerecht-bereidingstijd"></p>
-                            <br>
-                            <ul id="gerecht-ingredienten" 
-                            style="display: flex;
+                    <nav id="receptgegevens">
+                        <p id="gerecht-bereidingswijze"></p>
+                        <p id="gerecht-bereidingstijd"></p>
+                        <br>
+                        <ul id="gerecht-ingredienten" style="display: flex;
                             flex-wrap: wrap;
                             justify-content: center;
                             align-items: center;
                             background-color: #f2eded;
                             list-style: none;
-                            flex-direction: column"> 
-                            </ul>
-                        </nav>
-                        </div>
-                        <br>
-                        <button>nee, dankje</button>
-                        <button>ja, lekker</button>  
+                            flex-direction: column">
+                        </ul>
+                    </nav>
+                </div>
+                <br>
+                <button>nee, dankje</button>
+                <button>ja, lekker</button>
+            </div>
+        </section>
+    </div>
 
-                
-                    </div>
-                    
-                    
-                    
-                    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
 
-
-            </section>
-
-        </div>
-
-
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script src="js/main.js"></script>
-    </body>
 </html>

@@ -14,8 +14,8 @@ public class IngredientController {
     @Autowired
     IngredientService ingredientService;
 
-//    @GetMapping("/ingredient")
-//    public List<Ingredient> getGerechtById (@RequestParam(required = false) int id) {
+//    @GetMapping("/ingredient/{id}")
+//    public List<Ingredient> getGerechtById (@PathVariable int id) {
 //
 //        return ingredientService.findIngredientenByGerechtId(id);
 //    }
@@ -32,12 +32,12 @@ public class IngredientController {
         return ingredientService.count();
     }
 
-    @DeleteMapping("/ingredienten/{id}")
-    public void delete(@PathVariable String id) {
-
-        int ingredientId = Integer.parseInt(id);
-        ingredientService.deleteById(ingredientId);
-    }
+//    @DeleteMapping("/ingredienten/{id}")
+//    public void delete(@PathVariable String id) {
+//
+//        int ingredientId = Integer.parseInt(id);
+//        ingredientService.deleteById(ingredientId);
+//    }
 }
 
 

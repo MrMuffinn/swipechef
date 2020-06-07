@@ -10,8 +10,7 @@ public class Ingredient {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name="id")
     private int id;
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "naam")
+    @Column(name="gerecht")
     private int gerecht;
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "naam")
