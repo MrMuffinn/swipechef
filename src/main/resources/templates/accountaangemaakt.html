@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="nl" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="swipeChef inloggen">
+    <meta name="keywords" content="swipeChef, inloggen">
+    <meta name="author" content="Ilse van Dellen">
+    <meta name="viewport" , content="width=device-width, initial-scale=1.0">
+    <title>Account aangemaakt</title>
+    <link th:href="@{/css/inloggen.css}" rel="stylesheet">
+</head>
+<body>
+<div class="grid-container3">
+    <div class="item1">
+        <p id="logo">swipeChef</p>
+    </div>
+    <div class="item2">
+        <ul>
+            <li><a href="/gebruiker/inloggen">Inloggen</a></li>
+            <li><a href="mijnKookboek">Mijn kookboek</a></li>
+            <li><a href="recepten">Recepten</a></li>
+            <li><a href="/gebruiker/index">Home</a></li>
+        </ul>
+    </div>
+    <div class="item3" id="inloggen">
+
+        <form action="http://localhost:8080/gebruiker/registreren" method="post">
+            <label>Gelukt!</label>
+            <div class="container">
+                <p>Je account is aangemaakt. <br>
+                    Even testen.
+                </p>
+            </div>
+        </form>
+    </div>
+</div>
+</body>
+</html>
+

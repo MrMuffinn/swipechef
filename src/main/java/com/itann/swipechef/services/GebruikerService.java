@@ -1,5 +1,6 @@
 package com.itann.swipechef.services;
 
+import com.itann.swipechef.controllers.WachtwoordOnjuistException;
 import com.itann.swipechef.domain.Gebruiker;
 import com.itann.swipechef.persistence.GebruikerRepository;
 import lombok.RequiredArgsConstructor;
@@ -24,36 +25,32 @@ public class GebruikerService {
         return gebruikersRepository.findById(id);
     }
 
-    public Gebruiker postNieuweGebruiker(String voornaam, String achternaam, String email, String wachtwoord, String rol) {
+    public Gebruiker postNieuweGebruiker(String voornaam, String achternaam, String email, String wachtwoord) {
         Gebruiker gebruiker = new Gebruiker();
         gebruiker.setVoornaam(voornaam);
         gebruiker.setAchternaam(achternaam);
         gebruiker.setEmail(email);
         gebruiker.setWachtwoord(wachtwoord);
-        gebruiker.setRol(rol);
+        gebruiker.setRol("ADMIN");
         return gebruikersRepository.save(gebruiker);
     }
 
-//    public Gebruiker inloggenGebruiker(String email, String wachtwoord) {
-//        Gebruiker gebruiker = new Gebruiker();
-//        gebruiker.setVoornaam(email);
-//        gebruiker.setAchternaam(wachtwoord);
-//        return gebruikersRepository.(email, wachtwoord);
+    public Gebruiker inloggenGebruiker(String email, String wachtwoord) {
+
+        Gebruiker gebruiker = gebruikersRepository.findByEmail(email);
+
+        if (gebruiker.getWachtwoord().equals(wachtwoord)) {
+            return gebruiker;
+        } else
+            throw new WachtwoordOnjuistException();
+    }
+
+//    public boolean controleWachtwoord() {
+//        if (userName.trim().equals("admin") && password.trim().equals("admin")) {
+//            message.setText(" Hello " + userName + "");
+//        } else {
+//            message.setText(" Invalid user.. ");
+//        }
 //    }
-
-
- /*   private GebruikerDao dao;
-
-    public GebruikerService(GebruikerDao dao) {
-        this.dao = dao;
-    }
-
-    public Gebruiker getByEmail(String email) {
-        return dao.findByEmail(email);
-    }
-
-    public boolean save(Gebruiker gebruiker) {
-        return dao.save(gebruiker);
-    }*/
 
 }

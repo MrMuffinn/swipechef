@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="nl" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="swipeChef registreren">
+    <meta name="keywords" content="swipeChef, registreren">
+    <meta name="author" content="Ilse van Dellen">
+    <meta name="viewport" , content="width=device-width, initial-scale=1.0">
+    <title>Registreren</title>
+    <link th:href="@{/css/inloggen.css}" rel="stylesheet"></head>
+
+<body>
+ <div class="grid-container2">
+    <div class="item1">
+        <p id="logo">swipeChef</p>
+    </div>
+    <div class="item2">
+        <ul>
+            <li><a href="/gebruiker/inloggen">Inloggen</a></li>
+            <li><a href="mijnKookboek">Mijn kookboek</a></li>
+            <li><a href="recepten">Recepten</a></li>
+            <li><a href="/gebruiker/index">Home</a></li>
+        </ul>
+    </div>
+    <div class="item3" id="inloggen">
+
+        <form action="http://localhost:8080/gebruiker/accountaanmaken" method="post">
+            <label>Registreren</label>
+            <div class="container">
+                <label>
+                    <input type="text" placeholder="Voornaam" name="voornaam" autofocus>
+                </label>
+                <label>
+                    <input type="text" placeholder="Achternaam" name="achternaam">
+                </label>
+                <label>
+                    <input type="text" placeholder="E-mailadres" name="email">
+                </label>
+                <label>
+                    <input type="password" placeholder="Wachtwoord" name="wachtwoord">
+                </label>
+                <button type="submit">registreren</button>
+            </div>
+        </form>
+    </div>
+</div>
+</body>
+</html>
+
