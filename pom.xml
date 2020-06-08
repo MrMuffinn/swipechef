@@ -15,7 +15,7 @@
     <description>ITANN eindproject: SwipeChef</description>
 
     <properties>
-        <java.version>14</java.version>
+        <java.version>1Mis1</java.version>
     </properties>
 
 	<dependencies>
