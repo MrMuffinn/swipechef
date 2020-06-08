@@ -1,0 +1,151 @@
+@charset "UTF-8";
+/* CSS Document */
+
+
+	
+	header {
+		/* display: block; */  
+		display: flex;   
+		justify-content: space-between;
+		align-items: center; /*vertical align*/
+		width: 100%;  /*  redundant? */
+		background-color: #F2EDED;
+		}
+
+	
+	h1 {
+		 margin:50px 70px;
+		}
+	
+	
+	nav ul {
+		display: flex; /*haal deze eens weg*/
+		flex-wrap: wrap;
+		justify-content: center;
+		align-items: center;
+		background-color: #F2EDED;
+		list-style: none;
+		}
+
+			
+		
+	nav a, nav a:link, nav a:visited { /* unvisited link */
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		color: #1d1d1d;
+		
+		padding:3pt 10pt;
+		font-size: 12px;
+  		font-weight: bolder;
+		text-transform: uppercase;
+		text-decoration: none;
+		}
+		
+	nav a:hover{ /* mouse over link */
+		color: 	rgb(255, 0, 0) ; /* was aqua */
+		}
+
+	/* selected link */
+	a:active {
+		color: #ffffff;
+		}
+		
+		
+	/** responsive design **/
+		
+	/** mobiel **/
+	@media all and (min-width: 400px) {
+		nav li {
+			width: 100%;
+		}
+	
+
+		header {
+			flex-direction: column;
+		}
+
+		#recept{
+			flex-direction: column;
+			
+			display: flex;
+			width: 100%;
+			height: auto;  
+			justify-content: space-between;
+			align-items: right; 
+			
+			}
+
+			#test{
+				flex-direction: row;
+			display: flex;
+			background-image: url('/images/recept.png');
+			background-position: center;
+			background-repeat: no-repeat; 
+			background-attachment: fixed; 
+			background-size: cover;
+			background-color: #F2eded;
+			
+						justify-content: space-between;
+			align-items: right; 
+			}
+		
+		#legediv{
+			width:60%;
+		}
+		#receptgegevens{ 
+			width: 40%; 
+			opacity: 0.8;
+			background-color:#F2eded;
+			display: block;
+			justify-content: center;
+			align-items: center;
+			color: #1d1d1d;
+			
+			padding:3pt 10pt;
+			font-size: 12px;
+			font-weight: bolder;
+			text-transform: uppercase;
+			text-decoration: none;
+			
+		}
+		
+	}
+
+/* desktop*/
+	@media all and (min-width: 600px) {
+		nav li {
+			width: auto;
+
+		}
+		header {
+			flex-direction: row;
+		}
+
+		#recept{
+
+			background-image: url('/images/recept.png');
+                    background-position: center center;
+                    background-repeat: no-repeat; 
+                    background-attachment: fixed; 
+                    background-size: contain;
+                    background-color: #F2eded;
+                    display: flex;
+                    width: 100%;
+                    height: auto;  
+                    justify-content: space-between;
+                    align-items: right; 
+                   
+            		}
+		
+		#legediv{
+			width:60%;
+		}
+		#receptgegevens{ 
+			width: 30%; opacity: 0.8;
+                        background-color:#F2eded;
+		}
+		
+	}
+	
+
