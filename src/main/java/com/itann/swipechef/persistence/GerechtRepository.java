@@ -14,7 +14,7 @@ import java.util.List;
 @Repository
 public interface GerechtRepository extends CrudRepository<Gerecht, Integer> {
 
-      List<Gerecht> findByNaam(String naam);
+      String findByNaam(String naam);
 
 //    @Query("SELECT distinct I.id, I.gerecht, I.hoeveelheidPP, I.product FROM gerecht G, ingredient I  where G.id = I.gerecht")
 //    List<Ingredient> getIngredientenByGerecht();

@@ -2,7 +2,7 @@ package com.itann.swipechef.domain;
 
 import javax.persistence.*;
 
-@Entity
+@Entity()
 @Table(name = "ingredient")
 public class Ingredient {
 
@@ -12,9 +12,8 @@ public class Ingredient {
     private int id;
     @Column(name="gerecht")
     private int gerecht;
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "naam")
-    private Product product;
+    @Column(name ="product")
+    private String product;
     @Column(name="hoeveelheidPP")
     private int hoeveelheidPP;
 
@@ -44,11 +43,11 @@ public class Ingredient {
         this.gerecht = gerecht;
     }
 
-    public Product getProduct() {
+    public String getProduct() {
         return product;
     }
 
-    public void setProduct(Product product) {
+    public void setProduct(String product) {
         this.product = product;
     }
 

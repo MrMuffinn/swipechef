@@ -10,7 +10,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping
-public class SwipeController {
+public class GerechtController {
 
     @Autowired
     private GerechtRepository gerechtRepository;
@@ -35,6 +35,11 @@ public class SwipeController {
     public Optional<Gerecht> getGerechtById (@RequestParam(required = false) int id) {
 
         return gerechtService.getGerechtById(id);
+    }
+
+    @GetMapping("/gerecht/naam")
+    public String getGerechtByNaam (@RequestParam(required = false) String naam){
+        return gerechtService.findGerechtByNaam(naam);
     }
 
 

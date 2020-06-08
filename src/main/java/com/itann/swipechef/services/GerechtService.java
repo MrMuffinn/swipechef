@@ -21,6 +21,10 @@ public class GerechtService{
         return gerechtRepository.findById(id);
     }
 
+    public String findGerechtByNaam(String naam){
+        return gerechtRepository.findByNaam(naam);
+    }
+
 //    public List<Ingredient> getIngredientByGerechtId(int id){
 //
 //    }

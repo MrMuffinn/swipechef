@@ -1,6 +1,8 @@
 package com.itann.swipechef.controllers;
 
+import com.itann.swipechef.domain.Gerecht;
 import com.itann.swipechef.domain.Ingredient;
+import com.itann.swipechef.persistence.IngredientRepository;
 import com.itann.swipechef.services.IngredientService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -14,16 +16,18 @@ public class IngredientController {
     @Autowired
     IngredientService ingredientService;
 
-//    @GetMapping("/ingredient/{id}")
-//    public List<Ingredient> getGerechtById (@PathVariable int id) {
+    @Autowired
+    IngredientRepository ingredientRepository;
+
+//    @GetMapping("/ingredient")
+//    public List<Ingredient> getGerechtById (@RequestParam(required = false) int id) {
 //
 //        return ingredientService.findIngredientenByGerechtId(id);
 //    }
 
     @GetMapping("/ingredienten")
-    public List<Ingredient> allUsers() {
-
-        return ingredientService.findAll();
+    public Iterable<Ingredient> getAllIngredienten(){
+        return ingredientRepository.findAll();
     }
 
     @GetMapping("/ingredienten/count")
