@@ -1,81 +1,68 @@
-$(document).ready(function(){
-    $("#nietopslaan").on('click', function(){
-      alert(id);
-      id++;
+let gerechten = [];
+let ingredienten = [];
+let gerechtId = 1;
 
+$(function () {
 
-    });
-  });
-
-  
-
-
-var id = 1;
-
-$(function(){
-
-var gerechtId = id;
-var $gerechtnaam = $('#gerecht-naam');
-
-$.ajax({
-    type: 'GET',
-    url: '/gerechten',
-    success: function(data){
-        console.log('succes', data);
-        if( data.id = gerechtId){
-        $gerechtnaam.html(data[data.id-1].naam);
-        }               
-    }
-}
-)
-
+    var $gerechtnaam = $('#gerecht-naam');
+    var $gerechtbereidingstijd = $('#gerecht-bereidingstijd');
+    var $gerechtbereidingswijze = $('#gerecht-bereidingswijze');
     var $gerechtingredienten = $('#gerecht-ingredienten');
+
+    $.ajax({
+        type: 'GET',
+        url: '/gerechten',
+        success: function (data) {
+            console.log('succes', data);
+            gerechten = data;
+            $gerechtnaam.html(data[gerechtId - 1].naam);
+            $gerechtbereidingswijze.html('Bereidingswijze: ' + data[gerechtId - 1].bereidingswijze);
+            $gerechtbereidingstijd.append('Bereidingstijd: ' + data[gerechtId - 1].bereidingstijd + ' minuten');
+        }
+    });
+
     $.ajax({
         type: 'GET',
         url: '/ingredienten',
-        success: function (ingredienten) {
-            for (var i = 0; i < ingredienten.length; i++) {
-                
-                var ingredientrij = ingredienten[i]
-                if (ingredientrij.gerecht == gerechtId){
+        success: function (data) {
+            ingredienten = data;
+            for (var i = 0; i < data.length; i++) {
+
+                var ingredientrij = data[i]
+                if (ingredientrij.gerecht == gerechtId) {
                     console.log(ingredientrij);
                     $gerechtingredienten.append(`<li>${ingredientrij.product} ${ingredientrij.hoeveelheidPP}</li>`);
                 }
             }
         }
     });
-
-var $gerechtbereidingswijze = $('#gerecht-bereidingswijze');
-$.ajax({
-    type: 'GET',
-    url: '/gerechten',
-    success: function(data){
-        console.log('succes', data);
-        if( data.id = gerechtId){
-        $gerechtbereidingswijze.html(data[data.id-1].bereidingswijze);
-        }               
-    }
 });
 
-var $gerechtbereidingstijd = $('#gerecht-bereidingstijd');
-$.ajax({
-    type: 'GET',
-    url: '/gerechten',
-    success: function(data){
-        console.log('succes', data);
-        if( data.id = gerechtId){
-        $gerechtbereidingstijd.html(data[data.id-1].bereidingstijd);
-        }               
-    }
-});
+function vervanghtml() {
 
-$(document).ready(function(){
-    $("#welopslaan").on('click', function(){
-      alert(gerechtId);
-      
+    gerechtId++;
+    $("#gerecht-naam").empty().append(gerechten[gerechtId - 1].naam);
+    $("#gerecht-bereidingstijd").empty().append('Bereidingstijd: ' + gerechten[gerechtId - 1].bereidingstijd + ' minuten');
+    $("#gerecht-bereidingswijze").empty().append('Bereidingswijze: ' + gerechten[gerechtId - 1].bereidingswijze);
+    $("#gerecht-ingredienten").empty();
+    for (var i = 0; i < ingredienten.length; i++) {
+        var ingredientrij = ingredienten[i];
+        if (ingredientrij.gerecht == gerechtId) {
+            $("#gerecht-ingredienten").append(`<li>${ingredientrij.product} ${ingredientrij.hoeveelheidPP}</li>`);
+        }
+    }
+}
+
+$(document).ready(function () {
+    $("#nietopslaan").on('click', function () {
+        vervanghtml();
+        alert(gerechtId);
     });
-  });
-    
+});
 
+$(document).ready(function () {
+    $("#welopslaan").on('click', function () {
+        alert(gerechtId);
 
+    });
 });

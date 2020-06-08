@@ -11,28 +11,27 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link th:href="@{/css/inloggen.css}" rel="stylesheet">
-    </head>
+</head>
     <body>
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-        <div class="container">
-           <div class="head">
-            <header>
-                <h1><span style="font-size: small;">swipe</span>Chef </h1>
-                <nav>
-                    <ul>
-                        <li><a href="#">HOME</a></li>
-                        <li><a href="#">RECEPTEN</a></li>
-                        <li><a href="#">MIJN KOOKBOEK</a></li>
-                        <li><a href="#">INLOGGEN</a></li>
-                    </ul>
-                </nav>
-            </header>
+        <div class="grid-container3">
+
+            <div class="item1">
+                <p id="logo">__swipeChef</p>
+            </div>
+            <div class="item2">
+                <ul>
+                    <li><a href="/gebruiker/inloggen">Inloggen</a></li>
+                    <li><a href="mijnKookboek">Mijn kookboek</a></li>
+                    <li><a href="/recepten">Recepten</a></li>
+                    <li><a href="/index">Home</a></li>
+                </ul>
         </div>
-        <section id="recepten" class="recept" style="text-align: center; width: 60%;">
+        <div class="item3" id="recepten">
             <br>
-            <h2 id="gerecht-naam"></h2>
+            <label id="gerecht-naam"></label>
             <br>
             <div id="recept">
                 <div id="test">
@@ -55,7 +54,7 @@
                 <button id="nietopslaan">nee, dankje</button>
                 <button id="welopslaan">ja, lekker</button>
             </div>
-        </section>
+        </div>
     </div>
 
     <script th:src="@{https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js}"></script>

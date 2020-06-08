@@ -80,6 +80,7 @@ html, body {
     opacity: 95%;
 }
 
+
 ul {
     list-style-type: none;
     margin: 0;
@@ -177,4 +178,21 @@ button {
     font-family: fantasy;
     font-size: 24pt;
     margin-bottom: 50px;
+}
+
+
+/* vanaf hier gemaakt door Yorrick */
+#gerecht-naam{
+    font-family: fantasy;
+    align-items:center;
+}
+
+#recept{
+    width:50%;
+}
+
+#gerecht-bereidingswijze{
+    font-family: fantasy;
+    font-size:14px;
+
 }
