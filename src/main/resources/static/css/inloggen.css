@@ -122,18 +122,25 @@ button {
     background-color: black;
     color: white;
     padding: 14px 20px;
-    margin: 75px 0;
+    margin: 50px 0px 10px 0px;
     border: none;
     cursor: pointer;
-    width: 40%;
+    width: 37%;
     font-family: Helvetica, Arial, sans-serif;
     font-size: 12pt;
 }
 
-/* button:hover {
-  background-color:white;
-  color: black;
-} */
+#button2 {
+    background-color: black;
+    color: white;
+    padding: 14px 20px;
+    margin: 0;
+    border: none;
+    cursor: pointer;
+    width: 35%;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 12pt;
+}
 
 .container {
     padding: 16px;

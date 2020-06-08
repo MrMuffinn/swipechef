@@ -53,10 +53,7 @@ public class GebruikerController {
         return "inloggen";
     }
 
-    @GetMapping("/index")
-    public String indexHtml() {
-        return "index2";
-    }
+
 
 }
 
