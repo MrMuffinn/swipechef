@@ -1,5 +1,5 @@
 $(function(){
-var gerechtId = 2;
+var gerechtId = 1;
 var $gerechtnaam = $('#gerecht-naam');
 
 $.ajax({
