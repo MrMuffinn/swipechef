@@ -44,7 +44,7 @@ public class GebruikerController {
 
         gebruikerService.inloggenGebruiker(email, wachtwoord);
 
-        return "gebruikerAdded";
+        return "accountaangemaakt";
 
     }
 

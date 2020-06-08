@@ -9,10 +9,11 @@
     <title>Inloggen</title>
     <link th:href="@{/css/inloggen.css}" rel="stylesheet">
 </head>
+
 <body>
 <div class="grid-container1">
     <div class="item1">
-        <p id="logo">swipeChef</p>
+        <p id="logo">__swipeChef</p>
     </div>
     <div class="item2">
         <ul>
@@ -24,7 +25,7 @@
     </div>
     <div class="item3" id="inloggen">
 
-        <form action="http://localhost:8080/gebruiker/inloggen" method="post">
+        <form name="form" action="http://localhost:8080/gebruiker/inloggen" method="post">
             <label>Inloggen</label>
             <div class="container">
                 <label>
@@ -33,12 +34,13 @@
                 <label>
                     <input type="password" placeholder="Wachtwoord" name="wachtwoord">
                 </label>
-                <button type="submit">log in</button>
-                <button type="submit" formaction="http://localhost:8080/gebruiker/registreren" method="post">maak account aan</button>
+                <button type="submit" value="submit" onsubmit="return validateEmail()">Log in</button>
+                <button type="submit" formaction="http://localhost:8080/gebruiker/registreren" method="post">Maak account aan</button>
             </div>
         </form>
     </div>
 </div>
+<script type="text/javascript" th:src="@{/js/inloggen.js}"></script>
 </body>
 </html>
 

@@ -63,7 +63,7 @@ html, body {
 }
 
 #logo {
-    align-items: left;
+    align-items: flex-start;
     padding: 0;
     margin: 0;
     overflow: hidden;
@@ -145,3 +145,29 @@ button {
     font-family: fantasy;
 }
 
+#titel {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 18pt;
+    padding-bottom: 50px;
+    margin-top: 20px;
+}
+
+#welkom {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 14pt;
+    padding-bottom: 50px;
+    line-height: 30px;
+
+}
+
+#slogan {
+    font-family: fantasy;
+    font-size: 28pt;
+    margin-bottom: 0px;
+}
+
+#header {
+    font-family: fantasy;
+    font-size: 24pt;
+    margin-bottom: 50px;
+}

@@ -12,7 +12,7 @@
 <body>
 <div class="grid-container3">
     <div class="item1">
-        <p id="logo">swipeChef</p>
+        <p id="logo">__swipeChef</p>
     </div>
     <div class="item2">
         <ul>
@@ -24,12 +24,16 @@
     </div>
     <div class="item3" id="inloggen">
 
-        <form action="http://localhost:8080/gebruiker/registreren" method="post">
-            <label>Gelukt!</label>
-            <div class="container">
-                <p>Je account is aangemaakt. <br>
-                    Even testen.
+        <form>
+            <p id="header">Gelukt!</p>
+            <div>
+                <p id="welkom">Jij mag kiezen: <br>
+                    laat je swipeChef nieuwe recepten voorschotelen <br>
+                    <strong>of</strong> maak je vandaag een recept uit jouw eigen kookboek?<br>
                 </p>
+                <button type="submit" formaction="http://localhost:8080/gebruiker/registreren" method="post">Recepten</button>
+                <button type="submit" formaction="http://localhost:8080/gebruiker/registreren" method="post">Mijn kookboek</button>
+
             </div>
         </form>
     </div>
