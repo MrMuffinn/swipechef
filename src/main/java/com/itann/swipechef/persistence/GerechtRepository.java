@@ -2,6 +2,7 @@ package com.itann.swipechef.persistence;
 
 import com.itann.swipechef.domain.Gerecht;
 import com.itann.swipechef.domain.Ingredient;
+import com.itann.swipechef.domain.Voorkeursgerecht;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
@@ -15,6 +16,12 @@ import java.util.List;
 public interface GerechtRepository extends CrudRepository<Gerecht, Integer> {
 
       String findByNaam(String naam);
+
+//      @Query("SELECT distinct G.id, G.naam, G.energiePP, G.bereidingstijd, G.bereidingswijze  FROM gerecht G, voorkeursgerecht V where G.id =V.gerecht")
+//      Iterable <Gerecht> findAllVoorkeurgerechten();
+
+      @Query("SELECT distinct G FROM gerecht G, voorkeursgerecht V where G.id =V.gerecht")
+      Iterable <Gerecht> findAllVoorkeurgerechten();
 
 //    @Query("SELECT distinct I.id, I.gerecht, I.hoeveelheidPP, I.product FROM gerecht G, ingredient I  where G.id = I.gerecht")
 //    List<Ingredient> getIngredientenByGerecht();

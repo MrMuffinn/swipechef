@@ -18,4 +18,7 @@ public class MainController {
         return "gerecht1";
     }
 
+    @GetMapping("/mijnKookboek")
+    public String mijnkookboekHtml(){return "mijnkookboek";}
+
 }

@@ -3,6 +3,7 @@ package com.itann.swipechef.services;
 
 import com.itann.swipechef.domain.Gerecht;
 import com.itann.swipechef.domain.Ingredient;
+import com.itann.swipechef.domain.Voorkeursgerecht;
 import com.itann.swipechef.persistence.GerechtRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -25,6 +26,9 @@ public class GerechtService{
         return gerechtRepository.findByNaam(naam);
     }
 
+    public Iterable<Gerecht> findAllGerechten(){
+        return gerechtRepository.findAllVoorkeurgerechten();
+    }
 //    public List<Ingredient> getIngredientByGerechtId(int id){
 //
 //    }

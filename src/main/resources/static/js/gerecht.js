@@ -8,6 +8,7 @@ $(function () {
     var $gerechtbereidingstijd = $('#gerecht-bereidingstijd');
     var $gerechtbereidingswijze = $('#gerecht-bereidingswijze');
     var $gerechtingredienten = $('#gerecht-ingredienten');
+    
 
     $.ajax({
         type: 'GET',
@@ -36,6 +37,9 @@ $(function () {
             }
         }
     });
+
+    
+
 });
 
 function vervanghtml() {
@@ -54,15 +58,27 @@ function vervanghtml() {
 }
 
 $(document).ready(function () {
-    $("#nietopslaan").on('click', function () {
+    $("#volgendegerecht").on('click', function () {
         vervanghtml();
         alert(gerechtId);
     });
 });
 
-$(document).ready(function () {
-    $("#welopslaan").on('click', function () {
-        alert(gerechtId);
+$("#opslaan").on('click', function () {
 
-    });
+        alert(gerechtId);
+        var gerecht = gerechtId;
+         $.ajax({
+            type: 'POST',
+            data: { gerecht: gerechtId},
+            url: '/voorkeursgerecht/add',
+            success: function (response) {
+                alert(response.d)
+                                },
+            error: function(){
+                    ('error saving favoriet')
+                            }   
+            });
+    
+    
 });

@@ -2,7 +2,7 @@ package com.itann.swipechef.domain;
 
 import javax.persistence.*;
 
-@Entity
+@Entity(name="gerecht")
 @Table(name="gerecht")
 public class Gerecht {
 

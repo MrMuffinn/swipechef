@@ -1,6 +1,7 @@
 package com.itann.swipechef.controllers;
 
 import com.itann.swipechef.domain.Gerecht;
+import com.itann.swipechef.domain.Voorkeursgerecht;
 import com.itann.swipechef.persistence.GerechtRepository;
 import com.itann.swipechef.services.GerechtService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -42,6 +43,10 @@ public class GerechtController {
         return gerechtService.findGerechtByNaam(naam);
     }
 
+    @GetMapping("/allegerechten")
+    public Iterable<Gerecht> getAllGerechtInfo(){
+        return gerechtService.findAllGerechten();
+    }
 
 
 
