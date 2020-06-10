@@ -20,7 +20,7 @@ public interface GerechtRepository extends CrudRepository<Gerecht, Integer> {
 //      @Query("SELECT distinct G.id, G.naam, G.energiePP, G.bereidingstijd, G.bereidingswijze  FROM gerecht G, voorkeursgerecht V where G.id =V.gerecht")
 //      Iterable <Gerecht> findAllVoorkeurgerechten();
 
-      @Query("SELECT distinct G FROM gerecht G, voorkeursgerecht V where G.id =V.gerecht")
+      @Query("SELECT distinct G FROM gerecht G, voorkeursgerecht V where G.id = V.gerecht")
       Iterable <Gerecht> findAllVoorkeurgerechten();
 
 //    @Query("SELECT distinct I.id, I.gerecht, I.hoeveelheidPP, I.product FROM gerecht G, ingredient I  where G.id = I.gerecht")

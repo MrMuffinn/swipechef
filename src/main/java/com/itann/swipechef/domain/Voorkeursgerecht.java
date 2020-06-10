@@ -13,8 +13,10 @@ public class Voorkeursgerecht{
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", updatable = false, nullable = false)
     private int id;
+
     @Column(name = "gerecht")
     private int gerecht;
+
     @Column(name = "gebruiker")
     private int gebruiker;
 

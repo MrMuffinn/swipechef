@@ -12,6 +12,6 @@ import java.util.List;
 public interface VoorkeursgerechtRepository extends CrudRepository <Voorkeursgerecht, Integer> {
 
 
-//    @Query("SELECT distinct G.id, G.naam, G.energiePP, G.bereidingstijd, G.bereidingswijze  FROM gerecht G, voorkeursgerecht V where V.gerecht = G.id")
-//    Iterable <Voorkeursgerecht> findAllVoorkeurgerechten();
+    @Query("SELECT distinct G.id, G.naam, G.energiePP, G.bereidingstijd, G.bereidingswijze  FROM gerecht G, voorkeursgerecht V where V.gerecht = G.id")
+    Iterable <Voorkeursgerecht> findAllVoorkeurgerechten();
 }

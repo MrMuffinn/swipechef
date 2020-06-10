@@ -2,7 +2,7 @@ package com.itann.swipechef.domain;
 
 import javax.persistence.*;
 
-@Entity()
+@Entity(name="ingredient")
 @Table(name = "ingredient")
 public class Ingredient {
 

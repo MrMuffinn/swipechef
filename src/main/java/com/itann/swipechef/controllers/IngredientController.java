@@ -25,9 +25,14 @@ public class IngredientController {
 //        return ingredientService.findIngredientenByGerechtId(id);
 //    }
 
+//    @GetMapping("/ingredienten")
+//    public Iterable<Ingredient> getAllIngredienten(){
+//        return ingredientRepository.findAll();
+//    }
+
     @GetMapping("/ingredienten")
     public Iterable<Ingredient> getAllIngredienten(){
-        return ingredientRepository.findAll();
+        return ingredientService.findAllInfo();
     }
 
     @GetMapping("/ingredienten/count")

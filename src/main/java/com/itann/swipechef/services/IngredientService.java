@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import java.sql.ResultSet;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 @Service
@@ -33,6 +34,10 @@ public class IngredientService {
         it.forEach(e -> ingredienten.add(e));
 
         return ingredienten;
+    }
+
+    public Iterable<Ingredient> findAllInfo(){
+        return ingredientRepository.findAllInfo();
     }
 
     public int count() {
