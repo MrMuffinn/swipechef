@@ -42,7 +42,11 @@ public class GebruikerController {
     public String getUserByEmail(@RequestParam(required = true) String email,
                                  @RequestParam(required = true) String wachtwoord) {
 
-        gebruikerService.inloggenGebruiker(email, wachtwoord);
+        try {
+            gebruikerService.inloggenGebruiker(email, wachtwoord);
+        } catch (WachtwoordOnjuistException wachtwoordOnjuistException) {
+            return "wachtwoordonjuist";
+        }
 
         return "accountaangemaakt";
 

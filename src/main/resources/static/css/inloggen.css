@@ -196,3 +196,9 @@ button {
     font-size:14px;
 
 }
+
+span {
+    color: red;
+    font-size: 12pt;
+    font-family: Helvetica, Arial, sans-serif;
+}
