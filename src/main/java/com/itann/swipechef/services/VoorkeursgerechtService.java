@@ -1,13 +1,10 @@
 package com.itann.swipechef.services;
 
 
-import com.itann.swipechef.domain.Gerecht;
 import com.itann.swipechef.domain.Voorkeursgerecht;
 import com.itann.swipechef.persistence.VoorkeursgerechtRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import java.util.List;
 
 @Service
 public class VoorkeursgerechtService {

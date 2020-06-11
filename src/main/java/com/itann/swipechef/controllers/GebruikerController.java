@@ -1,7 +1,6 @@
 package com.itann.swipechef.controllers;
 
 import com.itann.swipechef.domain.Gebruiker;
-import com.itann.swipechef.domain.Gerecht;
 import com.itann.swipechef.persistence.GebruikerRepository;
 import com.itann.swipechef.services.GebruikerService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -61,7 +60,6 @@ public class GebruikerController {
     public String inloggenHtml() {
         return "inloggen";
     }
-
 
 //    @GetMapping("/gebruikerid")
 //    public String getIdbyEmail(@RequestParam(name = "email" ) String email) {

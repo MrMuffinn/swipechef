@@ -8,12 +8,12 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface IngredientRepository extends CrudRepository<Ingredient, Integer> {
 
-//    List<Ingredient> findIngredientByGerechtId(int gerecht);
-
     @Query("SELECT distinct I.id as id, I.gerecht as gerecht, I.hoeveelheidPP as hoeveelheidPP, I.product as product, P.eenheid as eenheid FROM ingredient I, product P where I.product = P.naam")
     Iterable<Ingredient> findAllInfo();
 
 //    @Query("SELECT distinct I.id, I.gerecht, I.hoeveelheidPP, I.product, P.eenheid FROM ingredient I, product P where I.product = P.naam")
 //    Iterable<IngredientExtra> findAllInfo();
+//
+//    List<Ingredient> findIngredientByGerechtId(int gerecht);
 
 }

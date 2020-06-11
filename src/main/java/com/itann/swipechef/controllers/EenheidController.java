@@ -19,13 +19,13 @@ public class EenheidController {
     public EenheidService eenheidService;
 
     @GetMapping("/eenheid")
-    public Eenheid getEenheid (@RequestParam(required = false) String naam) {
+    public Eenheid getEenheid(@RequestParam(required = false) String naam) {
 
         return eenheidService.getEenheidOpNaam(naam);
     }
 
     @GetMapping("/eenheden")
-    public Iterable<Eenheid> getAllEenheden(){
+    public Iterable<Eenheid> getAllEenheden() {
         return eenheidRepository.findAll();
     }
 }

@@ -1,6 +1,5 @@
 package com.itann.swipechef.controllers;
 
-import com.itann.swipechef.domain.Gerecht;
 import com.itann.swipechef.domain.Voorkeursgerecht;
 import com.itann.swipechef.services.VoorkeursgerechtService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,9 +7,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-
-import java.util.Iterator;
-import java.util.List;
 
 @RestController
 public class VoorkeursgerechtController {
@@ -27,7 +23,7 @@ public class VoorkeursgerechtController {
     }
 
     @GetMapping("/voorkeursgerechten")
-    public Iterable<Voorkeursgerecht> getAllGerechten(){
+    public Iterable<Voorkeursgerecht> getAllGerechten() {
         return voorkeursgerechtService.findAll();
     }
 
@@ -35,7 +31,6 @@ public class VoorkeursgerechtController {
 //    public Iterable<Voorkeursgerecht> getAllGerechtInfo(){
 //        return voorkeursgerechtService.findAllGerechten();
 //    }
-
 
 
 }

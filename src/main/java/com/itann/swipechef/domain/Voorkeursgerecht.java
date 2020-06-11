@@ -4,13 +4,11 @@ import lombok.Data;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
-import java.io.Serializable;
-import java.util.Objects;
 
 @Data
 @Entity(name = "voorkeursgerecht")
 @Table(name = "voorkeursgerecht")
-public class Voorkeursgerecht{
+public class Voorkeursgerecht {
 
     @Id
     @GeneratedValue(generator = "sequence-generator")
@@ -23,7 +21,7 @@ public class Voorkeursgerecht{
                     @org.hibernate.annotations.Parameter(name = "increment_size", value = "1")
             }
     )
-    @Column(name="id")
+    @Column(name = "id")
     private int id;
     @Column(name = "gerecht")
     private int gerecht;

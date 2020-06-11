@@ -17,7 +17,7 @@ public class EenheidService {
         return eenheidsRepository.findByNaam(naam);
     }
 
-       public Eenheid postNieuweEenheid(String naam) {
+    public Eenheid postNieuweEenheid(String naam) {
         Eenheid eenheid = new Eenheid();
         eenheid.setNaam(naam);
 

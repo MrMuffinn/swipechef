@@ -21,17 +21,17 @@ public class Gebruiker {
                     @Parameter(name = "increment_size", value = "1")
             }
     )
-    @Column(name="id")
+    @Column(name = "id")
     private int id;
-    @Column(name="voornaam")
+    @Column(name = "voornaam")
     private String voornaam;
-    @Column(name="achternaam")
+    @Column(name = "achternaam")
     private String achternaam;
-    @Column(name="email")
+    @Column(name = "email")
     private String email;
-    @Column(name="wachtwoord")
+    @Column(name = "wachtwoord")
     private String wachtwoord;
-    @Column(name="rol")
+    @Column(name = "rol")
     private String rol;
 
     public enum Rol {

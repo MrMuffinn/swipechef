@@ -2,17 +2,14 @@ package com.itann.swipechef.services;
 
 
 import com.itann.swipechef.domain.Gerecht;
-import com.itann.swipechef.domain.Ingredient;
-import com.itann.swipechef.domain.Voorkeursgerecht;
 import com.itann.swipechef.persistence.GerechtRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
 import java.util.Optional;
 
 @Service
-public class GerechtService{
+public class GerechtService {
 
     @Autowired
     public GerechtRepository gerechtRepository;
@@ -22,13 +19,14 @@ public class GerechtService{
         return gerechtRepository.findById(id);
     }
 
-    public String findGerechtByNaam(String naam){
+    public String findGerechtByNaam(String naam) {
         return gerechtRepository.findByNaam(naam);
     }
 
-    public Iterable<Gerecht> findAllGerechten(){
+    public Iterable<Gerecht> findAllGerechten() {
         return gerechtRepository.findAllVoorkeurgerechten();
     }
+
 //    public List<Ingredient> getIngredientByGerechtId(int id){
 //
 //    }
