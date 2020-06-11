@@ -48,7 +48,7 @@ public class GebruikerController {
             return "wachtwoordonjuist";
         }
 
-        return "accountaangemaakt";
+        return "inloggengelukt";
 
     }
 
