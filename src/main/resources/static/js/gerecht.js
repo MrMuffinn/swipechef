@@ -98,20 +98,20 @@ $('#gebruikeridophalen').on('click', function(){
 $(document).ready(function () {
     $("#volgendegerecht").on('click', function () {
         vervanghtml();
-        alert(gerechtId);
+        // alert(gerechtId);
     });
 });
 
 $("#opslaan").on('click', function () {
 
-    alert(gerechtId);
+    // alert(gerechtId);
     var gerecht = gerechtId;
     $.ajax({
         type: 'POST',
         data: { gerecht: gerechtId },
         url: '/voorkeursgerecht/add',
         success: function (response) {
-            alert(response.d)
+            // alert(response.d)
         },
         error: function () {
             ('error saving favoriet')

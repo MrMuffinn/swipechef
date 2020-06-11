@@ -39,6 +39,7 @@ $(function () {
         success: function (data) {
             ingredienten = data;
             // console.log(data);
+            if(arraySize > 0){
             for (var i = 0; i < data.length; i++) {
                 var ingredientrij = data[i]
                 // console.log(data[i]);
@@ -47,6 +48,10 @@ $(function () {
                     $gerechtingredienten.append(`<li>${ingredientrij[2]} ${ingredientrij[4]} ${ingredientrij[3]}</li>`);
                 }
             }
+        }
+        else{
+            alert('er zijn geen favorieten opgeslagen')
+        }
         }
     });
 
