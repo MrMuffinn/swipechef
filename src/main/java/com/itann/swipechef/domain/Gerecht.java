@@ -22,12 +22,4 @@ public class Gerecht {
     @Column(name="naam")
     private String naam;
 
-//    public Gerecht(int id, int bereidingstijd, String bereidingswijze, int energiePP, String naam){
-//        this.id = id;
-//        this.bereidingstijd = bereidingstijd;
-//        this.bereidingswijze = bereidingswijze;
-//        this.energiePP = energiePP;
-//        this.naam = naam;
-//    }
-
 }

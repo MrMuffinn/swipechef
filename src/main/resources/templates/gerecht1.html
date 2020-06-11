@@ -1,52 +1,51 @@
 <!DOCTYPE html>
 <html lang="nl" xmlns:th="http://www.thymeleaf.org">
+
 <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>SwipeCHEF</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link th:href="@{/css/inloggen.css}" rel="stylesheet">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>SwipeCHEF</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link th:href="@{/css/inloggen.css}" rel="stylesheet">
 </head>
-    <body>
-        <!--[if lt IE 7]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
-        <div class="grid-container3">
-            <div class="item1">
-                <p id="logo">__swipeChef</p>
-            </div>
-            <div class="item2">
-                <ul>
-                    <li><a href="/gebruiker/inloggen">Inloggen</a></li>
-                    <li><a href="/mijnKookboek">Mijn kookboek</a></li>
-                    <li><a href="/recepten">Recepten</a></li>
-                    <li><a href="/index">Home</a></li>
-                </ul>
+
+<body>
+    <div class="grid-container3">
+        <div class="item1">
+            <p id="logo">__swipeChef</p>
         </div>
-                <!-- <div class="container">
+        <div class="item2">
+            <ul>
+                <li><a href="/gebruiker/inloggen">Inloggen</a></li>
+                <li><a href="/mijnKookboek">Mijn kookboek</a></li>
+                <li><a href="/recepten">Recepten</a></li>
+                <li><a href="/index">Home</a></li>
+            </ul>
+        </div>
+        <!-- <div class="container">
                     <input id="email" type="text" placeholder="E-mailadres" name="email" required autofocus>
                     <button id="gebruikeridophalen">Log in</button>
                 </div>
             <br> -->
-            <div class="item3" id="recepten">
-                <div id="test">
-                    <h1 id="gerecht-naam"></h1>
-                    <nav id="receptgegevens">
-                        <p id="gerecht-bereidingstijd"></p>
-                        <br>
-                        <ul id="gerecht-ingredienten" style="display: flex;
+        <div class="item3" id="recepten">
+            <div id="test">
+                <h1 id="gerecht-naam"></h1>
+                <nav id="receptgegevens">
+                    <p id="gerecht-bereidingstijd"></p>
+                    <br>
+                    <ul id="gerecht-ingredienten" style="display: flex;
                             flex-wrap: wrap;
                             justify-content: center;
                             align-items: center;
                             background-color: #f2eded;
                             list-style: none;
                             flex-direction: column">
-                        </ul>
-                    </nav>
-                </div>
-                <button id="opslaan">Gerecht opslaan</button>
-                <button id="volgendegerecht">Volgend gerecht</button>
+                    </ul>
+                </nav>
+            </div>
+            <button id="opslaan">Gerecht opslaan</button>
+            <button id="volgendegerecht">Volgend gerecht</button>
         </div>
     </div>
 

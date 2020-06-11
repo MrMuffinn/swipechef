@@ -40,14 +40,6 @@ public class IngredientService {
         return ingredientRepository.findAllInfo();
     }
 
-    public int count() {
 
-        return (int) ingredientRepository.count();
-    }
-
-    public void deleteById(int ingredientId) {
-
-        ingredientRepository.deleteById(ingredientId);
-    }
 
 }

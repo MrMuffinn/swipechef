@@ -35,11 +35,7 @@ public class IngredientController {
         return ingredientService.findAllInfo();
     }
 
-    @GetMapping("/ingredienten/count")
-    public int count() {
 
-        return ingredientService.count();
-    }
 
 //    @DeleteMapping("/ingredienten/{id}")
 //    public void delete(@PathVariable String id) {

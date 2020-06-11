@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="nl" xmlns:th="http://www.thymeleaf.org">
+
 <head>
     <meta charset="UTF-8">
     <meta name="description" content="swipeChef inloggen">
@@ -9,36 +10,36 @@
     <title>Account aangemaakt</title>
     <link th:href="@{/css/inloggen.css}" rel="stylesheet">
 </head>
+
 <body>
-<div class="grid-container3">
-    <div class="item1">
-        <p id="logo">__swipeChef</p>
+    <div class="grid-container3">
+        <div class="item1">
+            <p id="logo">__swipeChef</p>
+        </div>
+        <div class="item2">
+            <ul>
+                <li><a href="/gebruiker/inloggen">Inloggen</a></li>
+                <li><a href="/mijnKookboek">Mijn kookboek</a></li>
+                <li><a href="/recepten">Recepten</a></li>
+                <li><a href="/gebruiker/index">Home</a></li>
+            </ul>
+        </div>
+        <div class="item3" id="inloggen">
+            <form>
+                <p id="header">Gelukt!</p>
+                <div id="alinea">
+                    <p id="welkom">Je account is aangemaakt. Je kunt nu gebruik maken van swipeChef! <br>
+                        Klik door de recepten heen en sla op wat jij lekker vindt.<br>
+                        Deze recepten zijn terug te vinden in jouw kookboek, zodat je altijd je <br>
+                        favoriete recepten bij de hand hebt.<br>
+                    </p>
+                    <p id="slogan">SWIPE. COOK. EAT.
+                    </p>
+                    <button type="submit" formaction="http://localhost:8080/recepten" method="get">Recepten</button>
+                </div>
+            </form>
+        </div>
     </div>
-    <div class="item2">
-        <ul>
-            <li><a href="/gebruiker/inloggen">Inloggen</a></li>
-            <li><a href="/mijnKookboek">Mijn kookboek</a></li>
-            <li><a href="/recepten">Recepten</a></li>
-            <li><a href="/gebruiker/index">Home</a></li>
-        </ul>
-    </div>
-    <div class="item3" id="inloggen">
-
-        <form>
-            <p id="header">Gelukt!</p>
-            <div id="alinea">
-                <p id="welkom">Je account is aangemaakt. Je kunt nu gebruik maken van swipeChef! <br>
-                    Klik door de recepten heen en sla op wat jij lekker vindt.<br>
-                    Deze recepten zijn terug te vinden in jouw kookboek, zodat je altijd je <br>
-                    favoriete recepten bij de hand hebt.<br>
-                </p>
-                <p id="slogan">SWIPE. COOK. EAT.
-                </p>
-                <button type="submit" formaction="http://localhost:8080/recepten" method="get">Recepten</button>
-            </div>
-        </form>
-    </div>
-</div>
 </body>
-</html>
 
+</html>
