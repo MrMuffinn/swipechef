@@ -8,7 +8,7 @@ import javax.persistence.Id;
 @Entity (name = "gebruiker")
 public class Gebruiker {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String voornaam;
     private String achternaam;
@@ -26,7 +26,7 @@ public class Gebruiker {
 //    }
 
     public enum Rol {
-        ADMINISTRATOR,
+        ADMIN,
         USER;
     }
 

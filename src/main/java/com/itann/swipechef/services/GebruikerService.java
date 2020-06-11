@@ -31,7 +31,7 @@ public class GebruikerService {
         gebruiker.setAchternaam(achternaam);
         gebruiker.setEmail(email);
         gebruiker.setWachtwoord(wachtwoord);
-        gebruiker.setRol("ADMIN");
+        gebruiker.setRol("USER");
         return gebruikersRepository.save(gebruiker);
     }
 

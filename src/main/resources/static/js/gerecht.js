@@ -1,5 +1,5 @@
 let gerechten = [];
-let ingredienten = [];
+let ingredienten  = [];
 let gerechtId = 1;
 let arraySize = 0;
 $(function () {

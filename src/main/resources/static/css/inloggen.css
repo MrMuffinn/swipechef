@@ -180,21 +180,30 @@ button {
     margin-bottom: 50px;
 }
 
+#recepten {
+    align-items: center;
+    text-align: center;
+}
 
-/* vanaf hier gemaakt door Yorrick */
+form {
+    align-items: center;
+}
+
 #gerecht-naam{
     font-family: fantasy;
-    align-items:center;
+    text-align: center;
+    font-size: 28pt;
+    /*padding-bottom: 24px;*/
 }
 
-#recept{
-    width:50%;
+#gerecht-ingredienten {
+    font-size: 14pt;
+    font-family: Helvetica, Arial, sans-serif;
 }
 
-#gerecht-bereidingswijze{
-    font-family: fantasy;
-    font-size:14px;
-
+#gerecht-bereidingstijd {
+    font-size: 12pt;
+    font-family: Helvetica, Arial, sans-serif;
 }
 
 span {
