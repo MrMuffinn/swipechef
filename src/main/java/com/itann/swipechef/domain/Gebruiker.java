@@ -1,81 +1,41 @@
 package com.itann.swipechef.domain;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import lombok.Data;
+import org.hibernate.annotations.GenericGenerator;
+import org.hibernate.annotations.Parameter;
 
-@Entity (name = "gebruiker")
+import javax.persistence.*;
+
+@Data
+@Entity(name = "gebruiker")
+@Table(name = "gebruiker")
 public class Gebruiker {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(generator = "sequence-generator")
+    @GenericGenerator(
+            name = "sequence-generator",
+            strategy = "org.hibernate.id.enhanced.SequenceStyleGenerator",
+            parameters = {
+                    @Parameter(name = "sequence_name", value = "gebruiker_sequence"),
+                    @Parameter(name = "initial_value", value = "1"),
+                    @Parameter(name = "increment_size", value = "1")
+            }
+    )
+    @Column(name="id")
     private int id;
+    @Column(name="voornaam")
     private String voornaam;
+    @Column(name="achternaam")
     private String achternaam;
+    @Column(name="email")
     private String email;
+    @Column(name="wachtwoord")
     private String wachtwoord;
+    @Column(name="rol")
     private String rol;
-
-//    public Gebruiker(int id, String voornaam, String achternaam, String email, String wachtwoord, String rol) {
-//        this.id = id;
-//        this.voornaam = voornaam;
-//        this.achternaam = achternaam;
-//        this.email = email;
-//        this.wachtwoord = wachtwoord;
-//        this.rol = rol;
-//    }
 
     public enum Rol {
         ADMIN,
         USER;
     }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getVoornaam() {
-        return voornaam;
-    }
-
-    public void setVoornaam(String voornaam) {
-        this.voornaam = voornaam;
-    }
-
-    public String getAchternaam() {
-        return achternaam;
-    }
-
-    public void setAchternaam(String achternaam) {
-        this.achternaam = achternaam;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getWachtwoord() {
-        return wachtwoord;
-    }
-
-    public void setWachtwoord(String wachtwoord) {
-        this.wachtwoord = wachtwoord;
-    }
-
-    public String getRol() {
-        return rol;
-    }
-
-    public void setRol(String rol) {
-        this.rol = rol;
-    }
-
 }

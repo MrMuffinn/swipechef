@@ -1,7 +1,10 @@
 package com.itann.swipechef.domain;
 
+import lombok.Data;
+
 import javax.persistence.*;
 
+@Data
 @Entity(name="gerecht")
 @Table(name="gerecht")
 public class Gerecht {
@@ -27,45 +30,4 @@ public class Gerecht {
 //        this.naam = naam;
 //    }
 
-
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public int getBereidingstijd() {
-        return bereidingstijd;
-    }
-
-    public void setBereidingstijd(int bereidingstijd) {
-        this.bereidingstijd = bereidingstijd;
-    }
-
-    public String getBereidingswijze() {
-        return bereidingswijze;
-    }
-
-    public void setBereidingswijze(String bereidingswijze) {
-        this.bereidingswijze = bereidingswijze;
-    }
-
-    public int getEnergiePP() {
-        return energiePP;
-    }
-
-    public void setEnergiePP(int energiePP) {
-        this.energiePP = energiePP;
-    }
-
-    public String getNaam() {
-        return naam;
-    }
-
-    public void setNaam(String naam) {
-        this.naam = naam;
-    }
 }
