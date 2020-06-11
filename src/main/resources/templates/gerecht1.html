@@ -9,6 +9,9 @@
         <link th:href="@{/css/inloggen.css}" rel="stylesheet">
 </head>
     <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
         <div class="grid-container3">
             <div class="item1">
                 <p id="logo">__swipeChef</p>
@@ -21,7 +24,12 @@
                     <li><a href="/index">Home</a></li>
                 </ul>
         </div>
-        <div class="item3" id="recepten">
+                <!-- <div class="container">
+                    <input id="email" type="text" placeholder="E-mailadres" name="email" required autofocus>
+                    <button id="gebruikeridophalen">Log in</button>
+                </div>
+            <br> -->
+            <div class="item3" id="recepten">
                 <div id="test">
                     <h1 id="gerecht-naam"></h1>
                     <nav id="receptgegevens">

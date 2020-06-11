@@ -6,9 +6,10 @@ function back_to_top() {
 
 let gerechten = [];
 let ingredienten = [];
-let gerechtId = 1;
+let arrayId = 1;
 let arraySize = 0;
-let ingredientId= 0;
+let ingredientId = 0;
+let gerechtId = 1;
 
 $(function () {
 
@@ -23,11 +24,12 @@ $(function () {
         url: '/allegerechten',
         success: function (data) {
             arraySize = data.length;
-            console.log('succes', data);
             gerechten = data;
-            $gerechtnaam.html(data[gerechtId-1].naam);
-            $gerechtbereidingswijze.html('Bereidingswijze: ' + data[gerechtId-1].bereidingswijze);
-            $gerechtbereidingstijd.append('Bereidingstijd: ' + data[gerechtId-1].bereidingstijd + ' minuten');
+            gerechtId = data[arrayId-1].id;
+            console.log('het gerechtId is: ', gerechtId);
+            $gerechtnaam.html(data[arrayId-1].naam);
+            $gerechtbereidingswijze.html('Bereidingswijze: ' + data[arrayId-1].bereidingswijze);
+            $gerechtbereidingstijd.append('Bereidingstijd: ' + data[arrayId-1].bereidingstijd + ' minuten');
         }
     });
 
@@ -36,12 +38,12 @@ $(function () {
         url: '/ingredienten',
         success: function (data) {
             ingredienten = data;
-            console.log(data);
+            // console.log(data);
             for (var i = 0; i < data.length; i++) {
                 var ingredientrij = data[i]
-                console.log(data[i]);
+                // console.log(data[i]);
                 if (ingredientrij[1] == gerechtId) {
-                    console.log(ingredientrij);
+                    // console.log(ingredientrij);
                     $gerechtingredienten.append(`<li>${ingredientrij[2]} ${ingredientrij[4]} ${ingredientrij[3]}</li>`);
                 }
             }
@@ -53,12 +55,13 @@ $(function () {
 });
 
 function vervanghtml() {
-    if(gerechtId < arraySize){
-    gerechtId++;
-    ingredientId = gerechten[gerechtId-1].id;
-    $("#gerecht-naam").empty().append(gerechten[gerechtId - 1].naam);
-    $("#gerecht-bereidingstijd").empty().append('Bereidingstijd: ' + gerechten[gerechtId - 1].bereidingstijd + ' minuten');
-    $("#gerecht-bereidingswijze").empty().append('Bereidingswijze: ' + gerechten[gerechtId - 1].bereidingswijze);
+    if(arrayId < arraySize){
+    arrayId++;
+    gerechtId = gerechten[arrayId-1].id;
+    ingredientId = gerechten[arrayId-1].id;
+    $("#gerecht-naam").empty().append(gerechten[arrayId - 1].naam);
+    $("#gerecht-bereidingstijd").empty().append('Bereidingstijd: ' + gerechten[arrayId - 1].bereidingstijd + ' minuten');
+    $("#gerecht-bereidingswijze").empty().append('Bereidingswijze: ' + gerechten[arrayId - 1].bereidingswijze);
     $("#gerecht-ingredienten").empty();
     for (var i = 0; i < ingredienten.length; i++) {
         var ingredientrij = ingredienten[i]
@@ -70,11 +73,12 @@ function vervanghtml() {
     }
 }
     else{
-        gerechtId = 1;
-        ingredientId = gerechten[gerechtId-1].id;
-        $("#gerecht-naam").empty().append(gerechten[gerechtId - 1].naam);
-        $("#gerecht-bereidingstijd").empty().append('Bereidingstijd: ' + gerechten[gerechtId - 1].bereidingstijd + ' minuten');
-        $("#gerecht-bereidingswijze").empty().append('Bereidingswijze: ' + gerechten[gerechtId - 1].bereidingswijze);
+        arrayId = 1;
+        gerechtId = gerechten[arrayId-1].id;
+        ingredientId = gerechten[arrayId-1].id;
+        $("#gerecht-naam").empty().append(gerechten[arrayId - 1].naam);
+        $("#gerecht-bereidingstijd").empty().append('Bereidingstijd: ' + gerechten[arrayId - 1].bereidingstijd + ' minuten');
+        $("#gerecht-bereidingswijze").empty().append('Bereidingswijze: ' + gerechten[arrayId - 1].bereidingswijze);
         $("#gerecht-ingredienten").empty();
         for (var i = 0; i < ingredienten.length; i++) {
             var ingredientrij = ingredienten[i]
@@ -90,17 +94,17 @@ function vervanghtml() {
 $(document).ready(function () {
     $("#volgendegerecht").on('click', function () {
         vervanghtml();
-        alert(gerechtId);
+        alert(arrayId);
     });
 });
 
 // $("#opslaan").on('click', function () {
 
-//         alert(gerechtId);
-//         var gerecht = gerechtId;
+//         alert(arrayId);
+//         var gerecht = arrayId;
 //          $.ajax({
 //             type: 'POST',
-//             data: { gerecht: gerechtId},
+//             data: { gerecht: arrayId},
 //             url: '/voorkeursgerecht/add',
 //             success: function (response) {
 //                 alert(response.d)

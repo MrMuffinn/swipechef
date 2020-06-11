@@ -1,6 +1,8 @@
 package com.itann.swipechef.controllers;
 
 import com.itann.swipechef.domain.Gebruiker;
+import com.itann.swipechef.domain.Gerecht;
+import com.itann.swipechef.persistence.GebruikerRepository;
 import com.itann.swipechef.services.GebruikerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -14,6 +16,9 @@ public class GebruikerController {
 
     @Autowired
     private GebruikerService gebruikerService;
+
+    @Autowired
+    private GebruikerRepository gebruikerRepository;
 
     @GetMapping("/gebruiker")
     public @ResponseBody
@@ -57,6 +62,21 @@ public class GebruikerController {
         return "inloggen";
     }
 
+
+//    @GetMapping("/gebruikerid")
+//    public String getIdbyEmail(@RequestParam(name = "email" ) String email) {
+//        return gebruikerService.getIdOpEmail(email);
+//    }
+//
+//    @GetMapping("/allegebruikers")
+//    public Iterable<Gebruiker> findAll(){
+//        return gebruikerService.findAll();
+//    }
+
+//    @GetMapping("/alle")
+//    public Iterable<Gebruiker> getAllGerechten(){
+//        return gebruikerRepository.findAll();
+//    }
 
 
 }

@@ -45,6 +45,13 @@ public class GebruikerService {
             throw new WachtwoordOnjuistException();
     }
 
+    public String getIdOpEmail(String email) {
+        return gebruikersRepository.findIdByEmail(email);
+    }
+
+    public Iterable<Gebruiker> findAll(){
+        return gebruikersRepository.findAll();
+    }
 //    public boolean controleWachtwoord() {
 //        if (userName.trim().equals("admin") && password.trim().equals("admin")) {
 //            message.setText(" Hello " + userName + "");

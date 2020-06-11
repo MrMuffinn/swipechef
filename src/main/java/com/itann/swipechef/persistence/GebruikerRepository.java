@@ -11,4 +11,6 @@ public interface GebruikerRepository extends CrudRepository<Gebruiker, Integer> 
     @Query("select g from gebruiker g where g.email = ?1")
     Gebruiker findByEmail(String email);
 
+    @Query("select g.id from gebruiker g where g.email = ?1")
+    String findIdByEmail(String email);
 }

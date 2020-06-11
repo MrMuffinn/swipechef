@@ -2,6 +2,7 @@ let gerechten = [];
 let ingredienten  = [];
 let gerechtId = 1;
 let arraySize = 0;
+var $email = $('#email');
 $(function () {
 
     var $gerechtnaam = $('#gerecht-naam');
@@ -29,7 +30,6 @@ $(function () {
         success: function (data) {
             ingredienten = data;
             console.log(data);
-            // $gerechtingredienten.append(`<li>${data[gerechtId][3]} ${data[gerechtId][4]}</li>`);
             for (var i = 0; i < data.length; i++) {
                 var ingredientrij = data[i]
                 console.log(data[i]);
@@ -78,6 +78,22 @@ function vervanghtml() {
         }
     }
 }
+
+$('#gebruikeridophalen').on('click', function(){
+    
+    var naam = $email.val();
+    console.log(naam);
+
+    $.ajax({
+        type: 'GET',
+        url: '/gebruiker/alle',
+        success: function (data) {
+            console.log('succes', data);
+            }
+    });
+
+
+});
 
 $(document).ready(function () {
     $("#volgendegerecht").on('click', function () {
